@@ -17,20 +17,10 @@
     color: #1f2a37;
     direction: rtl;
     text-align: right;
-    padding: 20px;
+    padding: 20px 14px;
   }
 
-  header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  h1 {
-    color: #00695c;
-    margin: 10px 0;
-  }
-
-  .back-btn {
+  .back {
     display: inline-block;
     background: #4caf50;
     color: white;
@@ -38,7 +28,20 @@
     border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #00695c;
+    margin: 0 0 16px;
+  }
+
+  .info {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 17px;
+    color: #444;
   }
 
   .gallery {
@@ -49,88 +52,61 @@
     margin: 0 auto;
   }
 
-  .gallery-item {
+  .item {
     background: white;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
   }
 
-  .gallery-item:hover {
+  .item:hover {
     transform: translateY(-6px);
   }
 
-  .gallery-item img {
+  .item img {
     width: 100%;
     height: auto;
     display: block;
   }
 
-  .info {
+  .desc {
     padding: 16px;
     text-align: center;
-  }
-
-  .name {
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0 0 8px;
-  }
-
-  .price {
-    color: #e74c3c;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 600;
   }
 </style>
 </head>
 <body>
 
-<header>
-  <a href="index.html" class="back-btn">← الرئيسية</a>
-  <h1>صيصان امروك الاماني حجم جابو</h1>
-  <p style="color:#555; margin-top:8px;">العمر: شهر | السعر: 50 درهم</p>
-</header>
+<a href="index.html" class="back">← الرئيسية</a>
+
+<h1>صيصان امروك الاماني حجم جابو</h1>
+
+<div class="info">
+  السعر: 50 درهم  •  العمر: شهر
+</div>
 
 <div class="gallery">
 
   <!-- Main photo -->
-  <div class="gallery-item">
+  <div class="item">
     <img src="sh1.jpg" alt="صيصان امروك الاماني">
-    <div class="info">
-      <div class="name">النوع الأساسي</div>
-      <div class="price">50 درهم</div>
-    </div>
+    <div class="desc">النوع الأساسي</div>
   </div>
 
-  <!-- Add as many more photos as you have -->
-  <!-- Example placeholders – replace src with real file names -->
-  <div class="gallery-item">
-    <img src="sh2.jpg" alt="صيصان نوع 2">
-    <div class="info">
-      <div class="name">صيصان أبيض ناصع</div>
-      <div class="price">50 درهم</div>
-    </div>
+  <!-- Add more photos of different kinds here -->
+  <!-- Replace src with your actual file names -->
+  <!-- <div class="item">
+    <img src="sh2.jpg" alt="نوع آخر">
+    <div class="desc">صيصان أبيض ناصع</div>
   </div>
 
-  <div class="gallery-item">
-    <img src="sh3.jpg" alt="صيصان نوع 3">
-    <div class="info">
-      <div class="name">صيصان مخطط</div>
-      <div class="price">50 درهم</div>
-    </div>
-  </div>
-
-  <div class="gallery-item">
-    <img src="sh4.jpg" alt="صيصان نوع 4">
-    <div class="info">
-      <div class="name">صيصان ذهبي</div>
-      <div class="price">50 درهم</div>
-    </div>
-  </div>
-
-  <!-- Keep adding more <div class="gallery-item"> ... </div> as needed -->
+  <div class="item">
+    <img src="sh3.jpg" alt="نوع آخر">
+    <div class="desc">صيصان مخطط</div>
+  </div> -->
 
 </div>
 
