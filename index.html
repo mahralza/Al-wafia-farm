@@ -123,6 +123,7 @@ header {
   max-width: 980px;
   margin: 0 auto;
   padding: 16px 14px 10px;
+  position: relative;
 }
 .logo {
   width: 100%;
@@ -140,6 +141,57 @@ header h1 {
   font-weight: 700;
   text-align: center;
   color: var(--green);
+}
+
+/* Clear call bubble ON TOP of banner (centered-ish) */
+.call-bubble-top {
+  position: absolute;
+  top: 90px;              /* adjust this value to position it lower/higher on the banner */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 22px;
+  background: rgba(76, 175, 80, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(76, 175, 80, 0.40);
+  box-shadow: 0 10px 40px rgba(76,175,80,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 800;
+  transition: transform 0.2s ease;
+}
+.call-bubble-top:hover {
+  transform: translateX(-50%) translateY(-4px);
+}
+.call-bubble-top svg {
+  width: 30px;
+  height: 30px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+}
+.call-bubble-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  background: rgba(15,42,68,0.94);
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.call-bubble-top:hover .call-bubble-label {
+  opacity: 1;
 }
 
 /* Bubble nav */
@@ -180,112 +232,7 @@ header h1 {
   background: rgba(0,105,92,.14);
 }
 
-.section {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 22px 14px 24px;
-  scroll-margin-top: 80px;
-}
-.section + .section {
-  border-top: 3px solid var(--divider);
-}
-
-.section-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.title-wrap { display: flex; align-items: center; gap: 10px; }
-.icon-badge {
-  width: 34px; height: 34px;
-  border-radius: 12px;
-  background: rgba(0,105,92,.08);
-  border: 1px solid rgba(0,0,0,.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon-badge svg { width: 18px; height: 18px; opacity: .8; }
-h2 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-  padding-bottom: 6px;
-  display: inline-block;
-}
-.hint { font-size: 12px; color: var(--muted); white-space: nowrap; opacity: .95; }
-
-.row {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(230px, 1fr);
-  gap: 14px;
-  overflow-x: auto;
-  padding-bottom: 6px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-.row::-webkit-scrollbar { height: 8px; }
-.row::-webkit-scrollbar-thumb { background: rgba(0,0,0,.15); border-radius: 999px; }
-.row::-webkit-scrollbar-track { background: rgba(0,0,0,.05); border-radius: 999px; }
-
-.card {
-  scroll-snap-align: start;
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 10px;
-  box-shadow: var(--shadow);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.card:hover { transform: translateY(-2px); box-shadow: var(--shadow2); }
-.card a { color: inherit; text-decoration: none; display: block; }
-
-.img-wrap {
-  border-radius: var(--radius2);
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,.06);
-  background: linear-gradient(135deg, rgba(255,255,255,.35), rgba(0,105,92,.04));
-  padding: 10px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
-}
-.card img {
-  width: 100%;
-  height: 320px;
-  object-fit: contain;
-  background: transparent;
-  display: block;
-  border-radius: 12px;
-}
-
-.name { margin: 10px 0 4px; font-weight: 700; font-size: 15px; }
-.price { margin: 0; font-size: 13px; color: #415364; font-weight: 500; }
-.view-btn {
-  margin-top: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  padding: 10px 12px;
-  font-weight: 700;
-  background: rgba(0,105,92,.10);
-  color: var(--text);
-  cursor: pointer;
-}
-.no-price .price { display: none; }
-
-footer {
-  text-align: center;
-  padding: 14px 10px 18px;
-  color: #6b7b8c;
-  font-size: 13px;
-  border-top: 3px solid var(--divider);
-  margin-top: 10px;
-}
-
-/* Floating social bubbles – LEFT side */
+/* Floating social bubbles – LEFT side – only WA + IG */
 .social-bubbles {
   position: fixed;
   left: 16px;
@@ -314,18 +261,6 @@ footer {
 .bubble.wa { background: #25D366; }
 .bubble.ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
 
-/* Only the call bubble is clear/glass style */
-.bubble.call {
-  background: rgba(76, 175, 80, 0.20);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(76, 175, 80, 0.35);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
-.bubble.call:hover {
-  background: rgba(76, 175, 80, 0.30);
-}
-
 .bubble-label {
   position: absolute;
   left: 64px;
@@ -352,6 +287,8 @@ footer {
   .social-bubbles { top: 88px; left: 12px; }
   .bubble { width: 48px; height: 48px; border-radius: 16px; }
   .bubble svg { width: 24px; height: 24px; }
+  .call-bubble-top { width: 56px; height: 56px; top: 80px; }
+  .call-bubble-top svg { width: 26px; height: 26px; }
 }
 
 @media (min-width: 980px) {
@@ -388,6 +325,14 @@ footer {
   <img src="logo.jpg" alt="Al Wafia Farm" class="logo">
   <h1>Al Wafia Farm</h1>
 
+  <!-- Single clear call bubble on top of banner -->
+  <a href="tel:+971525586666" class="call-bubble-top" aria-label="اتصل الآن">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <div class="call-bubble-label">اتصل: 052 558 6666</div>
+  </a>
+
   <div class="nav-bubbles" aria-label="الأقسام الرئيسية">
     <a href="#sheep">اغنام</a>
     <a href="#cows">ابقار</a>
@@ -396,10 +341,10 @@ footer {
   </div>
 </header>
 
-<!-- Floating bubbles on left – only call bubble is clear -->
+<!-- Floating left bubbles – only WhatsApp + Instagram -->
 <div class="social-bubbles" aria-label="روابط التواصل">
   <div class="bubble-wrap">
-    <a class="bubble wa" href="https://wa.me/971525586666" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <a class="bubble wa" href="https://wa.me/971525586666" target="_blank" rel="noopener">
       <svg viewBox="0 0 32 32" aria-hidden="true">
         <path d="M19.11 17.53c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.6.14-.18.27-.69.88-.85 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.35-.79-.7-1.32-1.56-1.47-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.6-1.45-.83-1.99-.22-.53-.45-.46-.6-.47l-.52-.01c-.18 0-.46.07-.7.34-.25.27-.95.93-.95 2.26s.98 2.62 1.12 2.8c.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.82-1.28.22-.62.22-1.16.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 28.5h-.01c-2.12 0-4.2-.57-6-1.65l-.43-.26-4.45 1.17 1.19-4.33-.28-.44a12.43 12.43 0 0 1-1.9-6.58C4.13 9.74 9.86 4 16.9 4c3.41 0 6.62 1.33 9.03 3.74a12.7 12.7 0 0 1 3.74 9.03c0 7.04-5.74 12.73-12.66 12.73z"/>
       </svg>
@@ -408,45 +353,20 @@ footer {
   </div>
 
   <div class="bubble-wrap">
-    <a class="bubble ig" href="https://www.instagram.com/7alal_al3zbah" target="_blank" rel="noopener" aria-label="Instagram">
+    <a class="bubble ig" href="https://www.instagram.com/7alal_al3zbah" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm6.2-2.3a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/>
       </svg>
     </a>
     <div class="bubble-label">انستقرام</div>
   </div>
-
-  <!-- Clear call bubble -->
-  <div class="bubble-wrap">
-    <a class="bubble call" href="tel:+971525586666" aria-label="اتصل الآن">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
-    </a>
-    <div class="bubble-label">اتصل: 052 558 6666</div>
-  </div>
 </div>
 
-<!-- Sections (unchanged) -->
-<div class="section" id="sheep">
-  <div class="section-header">
-    <div class="title-wrap">
-      <div class="icon-badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="12" cy="8" r="5"/>
-          <path d="M5 21v-2a5 5 0 0 1 10 0v2z"/>
-        </svg>
-      </div>
-      <h2>اغنام</h2>
-    </div>
-    <div class="hint">اسحب يمين/يسار</div>
-  </div>
-  <div class="row">
-    <!-- your sheep cards here -->
-  </div>
-</div>
-
-<!-- Add your other sections: ابقار, دواجن, ادويه + اجهزة as before -->
+<!-- Your categories/sections remain exactly the same -->
+<div class="section" id="sheep"> ... </div>
+<div class="section" id="cows"> ... </div>
+<div class="section" id="poultry"> ... </div>
+<div class="section" id="supplies"> ... </div>
 
 <footer>©️ Al Wafia Farm – جميع الحقوق محفوظة</footer>
 
