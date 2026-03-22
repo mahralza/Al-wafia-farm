@@ -234,20 +234,39 @@ h2 {
   border-radius: 12px;
 }
 
-.name { margin: 10px 0 4px; font-weight: 700; font-size: 15px; }
-.price { margin: 0; font-size: 13px; color: #415364; font-weight: 500; }
-.view-btn {
+.name { margin: 10px 0 4px; font-weight: 700; font-size: 15px; text-align: center; }
+.price { margin: 0; font-size: 13px; color: #415364; font-weight: 500; text-align: center; }
+
+.order-btn {
   margin-top: 10px;
   width: 100%;
+  background: var(--wa);
+  color: white;
   border: none;
   border-radius: 12px;
   padding: 10px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.order-btn:hover { opacity: 0.9; }
+
+.view-btn {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 12px;
   font-weight: 700;
   background: rgba(0,105,92,.10);
   color: var(--text);
   cursor: pointer;
 }
-.no-price .price { display: none; }
 
 footer {
   text-align: center;
@@ -258,7 +277,7 @@ footer {
   margin-top: 10px;
 }
 
-/* Floating social bubbles – WhatsApp + Instagram + clear Call (no Snapchat) */
+/* Floating social bubbles – WhatsApp + Instagram + clear Call */
 .social-bubbles {
   position: fixed;
   left: 16px;
@@ -287,7 +306,6 @@ footer {
 .bubble.wa { background: #25D366; }
 .bubble.ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
 
-/* Clear call bubble */
 .bubble.call {
   background: rgba(76, 175, 80, 0.20);
   backdrop-filter: blur(12px);
@@ -379,7 +397,7 @@ footer {
     <div class="bubble-label">انستقرام</div>
   </div>
 
-  <!-- Direct call bubble – clear style -->
+  <!-- Direct call bubble -->
   <div class="bubble-wrap">
     <a class="bubble call" href="tel:+971525586666" aria-label="اتصل الآن">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -410,8 +428,12 @@ footer {
       <a href="#">
         <div class="img-wrap"><img src="placeholder.jpg" alt="خروف"></div>
         <div class="name">خروف محلي</div>
-        <button class="view-btn">عرض</button>
       </a>
+      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
+        اطلب عبر واتساب
+      </a>
+      <button class="view-btn">عرض</button>
     </div>
   </div>
 </div>
@@ -436,8 +458,12 @@ footer {
       <a href="#">
         <div class="img-wrap"><img src="placeholder.jpg" alt="بقرة"></div>
         <div class="name">بقرة حلوب</div>
-        <button class="view-btn">عرض</button>
       </a>
+      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
+        اطلب عبر واتساب
+      </a>
+      <button class="view-btn">عرض</button>
     </div>
   </div>
 </div>
@@ -458,18 +484,20 @@ footer {
   </div>
 
   <div class="row">
-    <!-- Main card: صيصان – sh1.jpeg – links to detail page -->
+    <!-- صيصان card -->
     <div class="card">
       <a href="poultry-chicks.html">
         <div class="img-wrap">
           <img src="sh1.jpeg" alt="صيصان">
         </div>
         <div class="name">صيصان</div>
-        <button class="view-btn">عرض الأنواع</button>
       </a>
+      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
+        اطلب عبر واتساب
+      </a>
+      <button class="view-btn">عرض الأنواع</button>
     </div>
-
-    <!-- Add more poultry items later if needed -->
   </div>
 </div>
 
@@ -492,8 +520,12 @@ footer {
       <a href="#">
         <div class="img-wrap"><img src="placeholder.jpg" alt="ادوية"></div>
         <div class="name">لقاحات بيطرية</div>
-        <button class="view-btn">عرض</button>
       </a>
+      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
+        اطلب عبر واتساب
+      </a>
+      <button class="view-btn">عرض</button>
     </div>
   </div>
 </div>
