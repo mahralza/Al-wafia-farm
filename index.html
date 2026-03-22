@@ -238,30 +238,32 @@ h2 {
 .price { margin: 0; font-size: 13px; color: #415364; font-weight: 500; text-align: center; }
 
 .order-btn {
-  margin-top: 10px;
-  width: 100%;
+  margin: 16px auto 0;
+  width: fit-content;
+  min-width: 180px;
   background: var(--wa);
   color: white;
   border: none;
-  border-radius: 12px;
-  padding: 10px 12px;
+  border-radius: 999px;
+  padding: 12px 24px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37,213,102,0.3);
 }
-.order-btn:hover { opacity: 0.9; }
+.order-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 
 .view-btn {
-  margin-top: 8px;
+  margin-top: 10px;
   width: 100%;
   border: none;
   border-radius: 12px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-weight: 700;
   background: rgba(0,105,92,.10);
   color: var(--text);
@@ -343,6 +345,7 @@ footer {
   .social-bubbles { top: 88px; left: 12px; }
   .bubble { width: 48px; height: 48px; border-radius: 16px; }
   .bubble svg { width: 24px; height: 24px; }
+  .order-btn { min-width: 160px; padding: 10px 20px; font-size: 14px; }
 }
 
 @media (min-width: 980px) {
@@ -428,14 +431,18 @@ footer {
       <a href="#">
         <div class="img-wrap"><img src="placeholder.jpg" alt="خروف"></div>
         <div class="name">خروف محلي</div>
+        <button class="view-btn">عرض</button>
       </a>
-      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
-        اطلب عبر واتساب
-      </a>
-      <button class="view-btn">عرض</button>
     </div>
   </div>
+
+  <!-- WhatsApp order button under the category -->
+  <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+      <path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/>
+    </svg>
+    اطلب عبر واتساب
+  </a>
 </div>
 
 <!-- ابقار -->
@@ -458,17 +465,21 @@ footer {
       <a href="#">
         <div class="img-wrap"><img src="placeholder.jpg" alt="بقرة"></div>
         <div class="name">بقرة حلوب</div>
+        <button class="view-btn">عرض</button>
       </a>
-      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
-        اطلب عبر واتساب
-      </a>
-      <button class="view-btn">عرض</button>
     </div>
   </div>
+
+  <!-- WhatsApp order button under the category -->
+  <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+      <path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/>
+    </svg>
+    اطلب عبر واتساب
+  </a>
 </div>
 
-<!-- دواجن – main card is صيصان with sh1.jpeg -->
+<!-- دواجن -->
 <div class="section" id="poultry">
   <div class="section-header">
     <div class="title-wrap">
@@ -484,21 +495,24 @@ footer {
   </div>
 
   <div class="row">
-    <!-- صيصان card -->
     <div class="card">
       <a href="poultry-chicks.html">
         <div class="img-wrap">
           <img src="sh1.jpeg" alt="صيصان">
         </div>
         <div class="name">صيصان</div>
+        <button class="view-btn">عرض الأنواع</button>
       </a>
-      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
-        اطلب عبر واتساب
-      </a>
-      <button class="view-btn">عرض الأنواع</button>
     </div>
   </div>
+
+  <!-- WhatsApp order button under the category -->
+  <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+      <path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/>
+    </svg>
+    اطلب عبر واتساب
+  </a>
 </div>
 
 <!-- ادويه + اجهزة -->
@@ -520,14 +534,18 @@ footer {
       <a href="#">
         <div class="img-wrap"><img src="placeholder.jpg" alt="ادوية"></div>
         <div class="name">لقاحات بيطرية</div>
+        <button class="view-btn">عرض</button>
       </a>
-      <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/></svg>
-        اطلب عبر واتساب
-      </a>
-      <button class="view-btn">عرض</button>
     </div>
   </div>
+
+  <!-- WhatsApp order button under the category -->
+  <a href="https://wa.me/971525586666" target="_blank" class="order-btn">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+      <path d="M12.04 2c-5.51 0-9.99 4.48-9.99 9.99 0 1.78.47 3.53 1.36 5.08l-1.58 5.78 5.92-1.55c1.5.82 3.2 1.25 4.94 1.25h.01c5.5 0 9.99-4.48 9.99-9.99S17.54 2 12.04 2z"/>
+    </svg>
+    اطلب عبر واتساب
+  </a>
 </div>
 
 <footer>©️ Al Wafia Farm – جميع الحقوق محفوظة</footer>
